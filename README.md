@@ -10,8 +10,9 @@ File Purposes
   - 20200113_external_train_sens.xlsx: This dataset was used to create the graphs.
  
 - R
-  - proteinbiomarkerauc.R: This code generates the AUC values of 39 protein biomarkers for each of the 8 most common cancers and their stages. The AUC value considers the protein's specificity and sensitivity relative to the cancer and its stage.
-  - cancertablegenerator.R: This code generates two graphs. The first utilizes the protein with the largest AUC value and creates a graph that highlights the shift in detection of cancer cases. The second graph highlights the mortality from the newly-shifted cancer cases.
+  - ProteinBiomarkerauc.R: This code generates the AUC values of 39 protein biomarkers for each of the 8 most common cancers and their stages. The AUC value considers the protein's specificity and sensitivity relative to the cancer and its stage.
+  - CancerTableGenerator.R: This code generates two graphs. The first utilizes the protein with the largest AUC value and creates a graph that highlights the shift in detection of cancer cases. The second graph highlights the mortality from the newly-shifted cancer cases.
+  - SensitivityToMortalityReductionConverter.R: This program models the relationship between biomarker sensitivity and mortality reduction using a recursive stage interception algorithm. Given user-defined sensitivity and cancer type, it simulates cancer detection across stages, calculates how many late-stage cancers (III/IV) are shifted to early stages (I/II), and estimates overall mortality reduction by scaling with a surrogate endpoint factor (p). The tool also performs optimization to find the sensitivity value that maximizes mortality benefit and includes a histogram of mortality reduction simulations. 
  
 - Output
   - auc.txt: This is the output of 'proteinbiomarkerauc.R'. It's the AUC values of each protein biomarker for each cancer type and stage.

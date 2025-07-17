@@ -1,7 +1,7 @@
 library(ggalluvial)
 library(tidyverse)
 library(readxl)
-cancer_table <- read_excel("C:/Downloads/cancer.table.xlsx", 
+cancer_table <- read_excel("C:/Users/Soccerman/Downloads/cancer.table.xlsx", 
                            sheet = "Table S6")
 
 #breast
@@ -22,11 +22,11 @@ breast_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_b * 0.608),
-    round(stage_3_b * 0.228),
-    round(stage_3_b * 0.164),
-    round(stage_2_b * 0.836),
-    round(stage_2_b * 0.164),
+    round(stage_3_b * 0.518),
+    round(stage_3_b * 0.193),
+    round(stage_3_b * 0.289),
+    round(stage_2_b * .711),
+    round(stage_2_b * .289),
     stage_1_b * 1
   )
 )
@@ -108,8 +108,8 @@ colon_stage_shifts <- data.frame(
     round(stage_3_c * 0.313),
     round(stage_3_c * 0.349),
     round(stage_3_c * 0.338),
-    round(stage_2_c * 0.662),
-    round(stage_2_c * 0.338),
+    round(stage_2_c * 0.729),
+    round(stage_2_c * 0.271),
     stage_1_c * 1
   )
 )
@@ -186,11 +186,11 @@ esophagus_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_e * 0.287),
-    round(stage_3_e * 0.406),
-    round(stage_3_e * 0.307),
-    round(stage_2_e * 0.694),
-    round(stage_2_e * 0.306),
+    round(stage_3_e * 0.397),
+    round(stage_3_e * 0.506),
+    round(stage_3_e * 0.097),
+    round(stage_2_e * 0.903),
+    round(stage_2_e * 0.097),
     stage_1_e * 1
   )
 )
@@ -268,11 +268,11 @@ lung_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_l * 0.278),
-    round(stage_3_l * 0.372),
-    round(stage_3_l * 0.35),
-    round(stage_2_l * 0.65),
-    round(stage_2_l * 0.35),
+    round(stage_3_l * 0.349),
+    round(stage_3_l * 0.281),
+    round(stage_3_l * 0.37),
+    round(stage_2_l * 0.63),
+    round(stage_2_l * 0.37),
     stage_1_l * 1
   )
 )
@@ -350,11 +350,11 @@ liver_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_li * 0.451),
-    round(stage_3_li * 0.391),
-    round(stage_3_li * 0.158),
-    round(stage_2_li * 0.64),
-    round(stage_2_li * 0.36),
+    round(stage_3_li * 0.291),
+    round(stage_3_li * 0.32),
+    round(stage_3_li * 0.389),
+    round(stage_2_li * 0.568),
+    round(stage_2_li * 0.432),
     stage_1_li * 1
   )
 )
@@ -432,9 +432,9 @@ ovary_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_o * 0.483),
-    round(stage_3_o * 0.314),
-    round(stage_3_o * 0.203),
+    round(stage_3_o * 0.209),
+    round(stage_3_o * 0.358),
+    round(stage_3_o * 0.433),
     round(stage_2_o * 0.797),
     round(stage_2_o * 0.203),
     stage_1_o * 1
@@ -514,11 +514,11 @@ pancreas_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_p * 0.494),
-    round(stage_3_p * 0.294),
-    round(stage_3_p * 0.212),
-    round(stage_2_p * 0.788),
-    round(stage_2_p * 0.212),
+    round(stage_3_p * 0.189),
+    round(stage_3_p * 0.324),
+    round(stage_3_p * 0.487),
+    round(stage_2_p * 0.513),
+    round(stage_2_p * 0.487),
     stage_1_p * 1
   )
 )
@@ -596,11 +596,11 @@ stomach_stage_shifts <- data.frame(
   intercept = factor(c('III', 'II', 'I', 'II', 'I', 'I'),
                      levels = c('I', 'II', 'III')),
   Freq = c(
-    round(stage_3_s * 0.3),
-    round(stage_3_s * 0.368),
-    round(stage_3_s * 0.332),
-    round(stage_2_s * 0.668),
-    round(stage_2_s * 0.332),
+    round(stage_3_s * 0.494),
+    round(stage_3_s * 0.275),
+    round(stage_3_s * 0.231),
+    round(stage_2_s * 0.768),
+    round(stage_2_s * 0.232),
     stage_1_s * 1
   )
 )
@@ -655,4 +655,3 @@ ggplot(sankey_intercept_to_outcome_stomach, aes(axis1 = intercept, axis2 = Outco
     y = "Number of Cases"
   ) +
   theme_minimal()
-
